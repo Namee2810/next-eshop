@@ -36,13 +36,13 @@ function Cart(props) {
       </Head>
       <h1 className="Page_title">Shopping cart</h1>
       {
-        (cart.length && !products.length) &&
-        <div className="Page_empty">
-          <div>Đang tải sản phẩm</div>
-          <Link href="/">
-            <a className="btn btn-dark">Tiếp tục mua hàng</a>
-          </Link>
-        </div>
+        (cart.length && !products.length) ?
+          <div className="Page_empty">
+            <div>Đang tải sản phẩm</div>
+            <Link href="/">
+              <a className="btn btn-dark">Tiếp tục mua hàng</a>
+            </Link>
+          </div> : null
       }
       {
         products.length ?

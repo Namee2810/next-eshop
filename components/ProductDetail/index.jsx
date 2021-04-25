@@ -78,7 +78,7 @@ function ProductDetail(props) {
             <div className={classNames("btn btn-transparent", styles.ProductDetail_add)}
               onClick={() => handleClickAdd(product._id)}>
               {
-                cart.includes(product._id) ? "- Remove from cart"
+                cart.findIndex(item => item.id === product._id) !== -1 ? "- Remove from cart"
                   : "+ Add to cart"
               }
             </div>
