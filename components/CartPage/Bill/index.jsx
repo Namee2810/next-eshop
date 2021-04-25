@@ -32,12 +32,12 @@ function Bill(props) {
     e.preventDefault();
     const code = e.target.code.value;
     if (code === "GIAM50") {
-      setBill({ ...bill, discountCode: 50 });
+      setBill({ ...bill, discountCode: 50, total: bill.total - 50 / 100 * bill.subtotal });
       message.success("Bạn đã nhận được ưu đãi giảm 50% từ mã 'GIAM50'");
     }
     else {
       message.warn("Mã giảm giá không hợp lệ")
-      setBill({ ...bill, discountCode: 0 });
+      setBill({ ...bill, discountCode: 0, total: bill.subtotal - bill.discount });
     }
   }
 
