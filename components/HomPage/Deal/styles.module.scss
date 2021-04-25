@@ -1,0 +1,87 @@
+.Deal {
+  margin-top: 50px;
+  padding: 150px 0;
+  background: #f3f2ee;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    padding: 50px 0;
+  }
+
+  &_img {
+    position: relative;
+    & > div {
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: black;
+      color: white;
+      padding: 5px 10px;
+
+      font: {
+        size: 22px;
+        weight: bold;
+      }
+      & > span {
+        color: #919191;
+        margin-left: 5px;
+        text-decoration: line-through;
+        font: {
+          size: 16px;
+          weight: 400;
+        }
+      }
+    }
+  }
+
+  &_countDown {
+    display: flex;
+    text-align: center;
+
+    & > div {
+      margin-right: 40px;
+      &:last-child {
+        margin: 0;
+      }
+      & > div {
+        &:first-child {
+          font: {
+            size: 40px;
+            weight: bold;
+          }
+        }
+        &:last-child {
+          color: rgb(110, 110, 110);
+        }
+      }
+    }
+  }
+  &_text {
+    margin-left: 100px;
+
+    @media (max-width: 992px) {
+      margin: 20px 0 0 0;
+      text-align: center;
+    }
+    & > p {
+      color: #ea4335;
+      font-weight: 500;
+      letter-spacing: 2px;
+    }
+  }
+  &_shopBtn {
+    margin-top: 50px;
+    & > a {
+      font: {
+        size: 16px;
+        weight: 500;
+      }
+      letter-spacing: 2px;
+    }
+  }
+}

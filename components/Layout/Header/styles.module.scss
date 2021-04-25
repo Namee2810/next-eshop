@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+$color-search: rgb(189, 189, 189);
+
+.Header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  &_top {
+    position: relative;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: black;
+    color: white;
+
+    transition: height 0.25s ease-in-out;
+    font-size: 12px;
+
+    &_close {
+      position: absolute;
+      right: 10px;
+      cursor: pointer;
+    }
+    & > a {
+      text-decoration: underline;
+      &:hover {
+        color: inherit;
+      }
+    }
+  }
+
+  &_container {
+    height: 60px;
+    background: rgba(255, 255, 255, 0.95);
+    & > div {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+
+  &_logo {
+    font: {
+      family: "Pacifico", cursive;
+      size: 32px;
+      weight: bold;
+    }
+    letter-spacing: 2px;
+  }
+
+  &_icons {
+    display: flex;
+    font-size: 20px;
+
+    & > div {
+      position: relative;
+      cursor: pointer;
+      margin: 0 8px;
+    }
+  }
+  &_nav {
+    display: flex;
+    transition: all 0.25s ease-in-out;
+    @media (max-width: 768px) {
+      display: none;
+      position: absolute;
+      flex-direction: column;
+      text-align: center;
+      left: -61px;
+      top: 60px;
+      width: calc(100vw - 100px);
+      height: calc(100vh - 60px);
+      overflow: hidden;
+
+      background: rgba(255, 255, 255, 0.95);
+      animation: Header_nav 0.25s ease-in-out;
+      box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+        0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+        0 100px 80px rgba(0, 0, 0, 0.07);
+    }
+    @media (max-width: 576px) {
+      width: 100%;
+    }
+
+    & > a {
+      position: relative;
+      font: {
+        size: 20px;
+        weight: 500;
+      }
+      margin: 0 20px;
+      @media (max-width: 768px) {
+        margin: 0 0 10px 0;
+      }
+      &:hover {
+        &::after {
+          width: 100%;
+          left: 0;
+        }
+      }
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        content: "";
+        width: 0;
+        height: 2px;
+        background: #ea4335;
+        transition: all 0.25s ease-in-out;
+      }
+    }
+    &-active {
+      @media (max-width: 768px) {
+        color: #ea4335;
+      }
+      &::before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: #ea4335;
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+    }
+  }
+  &_search {
+    display: flex;
+    position: absolute;
+    font-size: 16px;
+    background: white;
+    width: 250px;
+    left: -150px;
+    height: 35px;
+    border: 1px solid $color-search;
+    border-radius: 15px;
+    animation: Header_search 0.25s ease-in-out;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.035), 0 40px 40px rgba(0, 0, 0, 0.07);
+    & > input {
+      padding: 0 20px;
+      border-radius: 15px;
+      height: 100%;
+      width: calc(100% - 50px);
+    }
+    &Btn {
+      background: none;
+      border: none;
+      outline: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 50px;
+      border-left: 1px solid $color-search;
+      cursor: pointer;
+    }
+  }
+  &_bubble {
+    font-size: 12px;
+    position: absolute;
+    left: 12px;
+    background: black;
+    padding: 0 8px;
+    border-radius: 10px;
+    color: white;
+
+    animation: Header_bubble 0.5s ease-in-out;
+    pointer-events: none;
+  }
+  &_menu {
+    font-size: 20px;
+    @media (min-width: 769px) {
+      display: none;
+    }
+  }
+}
+
+@keyframes Header_search {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes Header_bubble {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes Header_nav {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,80 @@
+.Hero {
+  user-select: none;
+  position: relative;
+  overflow-x: hidden;
+
+  &_slideChange {
+    position: absolute;
+  }
+  &_item {
+    display: flex;
+    height: 800px;
+    background: {
+      size: cover;
+      position: center;
+    }
+  }
+  &_text {
+    text-align: left;
+    align-self: center;
+    width: 400px;
+    margin-left: 100px;
+
+    @media (max-width: 768px) {
+      margin: 0 35px;
+    }
+
+    & > p {
+      &:first-child {
+        color: #e75555;
+        font-weight: bold;
+      }
+      &:nth-child(2) {
+        font: {
+          size: 48px;
+          weight: 500;
+        }
+        line-height: 1;
+      }
+      &:last-of-type {
+        margin-bottom: 50px;
+      }
+    }
+    & > a {
+      position: relative;
+      font: {
+        size: 20px;
+        weight: 600;
+      }
+
+      &:hover {
+        & > span {
+          display: inline-block;
+          animation: Hero_shop 1s ease-in-out infinite;
+        }
+      }
+    }
+  }
+  &_socials {
+    position: absolute;
+    bottom: 20px;
+    left: 100px;
+
+    & > a {
+      padding: 0 10px;
+      color: rgb(150, 150, 150);
+      &:hover {
+        color: black;
+      }
+    }
+  }
+}
+
+@keyframes Hero_shop {
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}

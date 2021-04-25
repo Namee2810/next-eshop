@@ -1,0 +1,124 @@
+.ProductDetail {
+  padding: 0 15px 50px;
+  font-size: 16px;
+
+  @media (max-width: 992px) {
+    grid-template-columns: auto;
+
+    img {
+      max-width: 300px;
+    }
+  }
+  & > div:first-child {
+    display: flex;
+    justify-content: center;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  img {
+    max-width: 300px;
+  }
+
+  &_image {
+    position: relative;
+  }
+  &_tag {
+    position: absolute;
+    top: 20px;
+    font: {
+      size: 12px;
+      weight: 500;
+    }
+    letter-spacing: 2px;
+    &_sale {
+      padding: 5px 15px;
+      background: black;
+      color: white;
+    }
+    &_new {
+      padding: 5px 15px;
+      background: white;
+      color: black;
+    }
+  }
+  &_content {
+    display: grid;
+    grid-gap: 5px;
+    margin-left: 50px;
+    @media (max-width: 768px) {
+      margin: 20px 0 0 0;
+    }
+    & > h2 {
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+  }
+  &_price {
+    font: {
+      size: 20px;
+      weight: 500;
+    }
+    & > span {
+      margin-left: 5px;
+      font-size: 16px;
+      text-decoration: line-through;
+    }
+  }
+  &_size {
+    margin-top: 15px;
+    font-weight: 700;
+    & > span {
+      margin: 0 8px;
+      padding: 5px 15px;
+      border: 1px solid rgb(206, 206, 206);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s ease-in-out;
+    }
+    &-select {
+      background: black;
+      color: white;
+      border-color: black !important;
+    }
+  }
+  &_color {
+    margin-top: 15px;
+    font-weight: 700;
+    display: flex;
+    & > div {
+      position: relative;
+      margin: 0 8px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      transition: all 0.25s;
+    }
+    &-select {
+      transform: scale(1.15);
+      &::after {
+        position: absolute;
+        content: "";
+        top: -3px;
+        left: -3px;
+        width: calc(100% + 6px);
+        height: calc(100% + 6px);
+        border: 1px solid rgb(172, 172, 172);
+        border-radius: 50%;
+      }
+    }
+  }
+  &_add {
+    margin-top: 20px;
+    user-select: none;
+    font: {
+      size: 18px;
+      weight: 500;
+    }
+    cursor: pointer;
+  }
+  &_des {
+    grid-column: 1/3;
+  }
+}

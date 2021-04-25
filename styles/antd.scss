@@ -1,0 +1,20 @@
+.ant-pagination {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 20px;
+}
+.ant-btn {
+  &:hover {
+    border-color: initial;
+    color: initial;
+  }
+  &-primary {
+    background: black;
+    border-color: black;
+    &:hover {
+      background: black;
+      color: white;
+      border-color: black;
+    }
+  }
+}

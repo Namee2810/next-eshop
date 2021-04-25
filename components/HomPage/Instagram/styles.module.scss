@@ -1,0 +1,62 @@
+.Instagram {
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  &_images {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    & > div {
+      height: 250px;
+      width: 250px;
+
+      @media (max-width: 576px) {
+        width: calc(90vw / 2);
+      }
+
+      background: {
+        size: cover;
+        position: center;
+      }
+    }
+  }
+  &_text {
+    margin-left: 50px;
+    width: 300px;
+
+    @media (max-width: 768px) {
+      margin-left: 0;
+      text-align: center;
+    }
+
+    & > a {
+      border-bottom: 2px solid #e53637;
+      transition: all 0.25s;
+      font: {
+        size: 40px;
+        weight: 500;
+      }
+      &:hover {
+        border-bottom-color: transparent;
+      }
+    }
+    & > p {
+      margin-top: 20px;
+    }
+
+    &_tag {
+      letter-spacing: 2px;
+      color: #e53637;
+      font: {
+        size: 32px;
+        weight: 500;
+      }
+    }
+  }
+}

@@ -1,0 +1,112 @@
+.Banner {
+  margin-top: 100px;
+  position: relative;
+  overflow: hidden;
+
+  & > div {
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &_item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    & > img {
+      transition: all 0.25s ease-in-out;
+      @media (max-width: 1200px) {
+        width: 360px;
+      }
+      @media (max-width: 768px) {
+        width: initial;
+      }
+      @media (max-width: 576px) {
+        width: 100%;
+      }
+    }
+    &:hover {
+      & > img {
+        transform: scale(1.1);
+      }
+      .Banner_text > a {
+        &::before {
+          transform: scale(1.1, 1.2) translate(-8px, -8px);
+          opacity: 1;
+        }
+        &::after {
+          transform: scale(1.1, 1.2) translate(8px, 8px);
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &_text {
+    line-height: 1;
+    position: absolute;
+    @media (max-width: 768px) {
+      background: rgba(255, 255, 255, 0.8);
+    }
+    & > p {
+      font: {
+        size: 36px;
+        weight: 500;
+      }
+    }
+    & > a {
+      position: relative;
+      letter-spacing: 2px;
+      font: {
+        size: 18px;
+        weight: 500;
+      }
+    }
+  }
+  & > div {
+    & > div:first-child > div {
+      & > div {
+        width: 280px;
+        position: absolute;
+        left: -200px;
+        @media (max-width: 768px) {
+          left: initial;
+        }
+      }
+    }
+    & > div:nth-child(2) > div {
+      margin-top: -80px;
+
+      @media (max-width: 992px) {
+        margin-top: 40px;
+      }
+
+      & > div {
+        width: 200px;
+        position: absolute;
+        bottom: -100px;
+        @media (max-width: 992px) {
+          bottom: initial;
+          right: -200px;
+        }
+        @media (max-width: 768px) {
+          right: initial;
+        }
+      }
+    }
+    & > div:nth-child(3) > div {
+      margin-top: 100px;
+      @media (max-width: 992px) {
+        margin-top: 40px;
+      }
+      & > div {
+        width: 230px;
+        left: -150px;
+        @media (max-width: 768px) {
+          left: initial;
+        }
+      }
+    }
+  }
+}

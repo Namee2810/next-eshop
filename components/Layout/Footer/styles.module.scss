@@ -1,0 +1,68 @@
+.Footer {
+  font-size: 16px;
+  padding: 40px 20px 20px;
+  background: #111111;
+  color: rgb(196, 196, 196);
+
+  a:hover {
+    color: #ea4335;
+  }
+
+  &_title {
+    margin-bottom: 20px;
+    color: white;
+    font: {
+      size: 20px;
+      weight: 500;
+    }
+  }
+  &_logo {
+    font-family: "Pacifico", cursive;
+    font-size: 32px;
+  }
+
+  &_top {
+    display: grid;
+    grid-template-columns: 300px 120px 300px;
+    grid-gap: 50px;
+    justify-content: center;
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(2, auto);
+    }
+    @media (max-width: 576px) {
+      grid-template-columns: auto;
+    }
+
+    & > div {
+      &:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+  &_made {
+    margin-top: 30px;
+    text-align: center;
+    & > a {
+      border-bottom: 1px solid #ea4335;
+    }
+  }
+  form {
+    width: 100%;
+    & > input,
+    & > button {
+      background: none;
+      border: none;
+      outline: none;
+      border-bottom: 1px solid white;
+    }
+    & > input {
+      width: 200px;
+    }
+  }
+}
