@@ -45,7 +45,7 @@ function Cart(props) {
           </div> : null
       }
       {
-        products.length ?
+        cart.length ?
           <div className={styles.Cart}>
             <Products products={products} setProducts={setProducts} />
             <Bill products={products} />
