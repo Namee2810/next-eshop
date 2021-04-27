@@ -1,5 +1,6 @@
 import { Result } from "antd";
 import Layout from "components/Layout";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from 'react';
 
@@ -18,6 +19,9 @@ function OrderComplete(props) {
 
   return (
     <div>
+      <Head>
+        <title>eShop. | Đặt hàng thành công</title>
+      </Head>
       <Layout>
         {order &&
           <Result style={{ minHeight: "65vh", display: "flex", justifyContent: "center", flexDirection: "column" }}
